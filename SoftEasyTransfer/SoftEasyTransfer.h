@@ -1,11 +1,9 @@
 /******************************************************************
-*  EasyTransferI2C Arduino Library 
+*  EasyTransfer Arduino Library 
 *		details and example sketch: 
 *			http://www.billporter.info/easytransfer-arduino-library/
 *
 *		Brought to you by:
-*              Mathieu Alorent
-*               Forked from
 *              Bill Porter
 *              www.billporter.info
 *
@@ -23,35 +21,32 @@ GNU General Public License for more details.
 *To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or
 *send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 ******************************************************************/
-#ifndef EasyTransferI2C_h
-#define EasyTransferI2C_h
+#ifndef SoftEasyTransfer_h
+#define SoftEasyTransfer_h
 
 
 //make it a little prettier on the front end. 
 #define details(name) (byte*)&name,sizeof(name)
 
-//Not neccessary, but just in case. 
-#if ARDUINO > 22
 #include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
-#include "HardwareSerial.h"
-//#include <NewSoftSerial.h>
+#include <SoftwareSerial.h>
+
+
 #include <math.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <avr/io.h>
-#include <Wire.h>
 
-class EasyTransferI2C {
+class SoftEasyTransfer {
 public:
-void begin(uint8_t *, uint8_t, TwoWire *theSerial);
-void sendData(uint8_t address);
+void begin(uint8_t *, uint8_t, SoftwareSerial *theSerial);
+void sendData();
 boolean receiveData();
 private:
-TwoWire *_serial;
-//NewSoftSerial *_serial;
+
+SoftwareSerial *_serial;
+
+
 uint8_t * address;  //address of struct
 uint8_t size;       //size of struct
 uint8_t * rx_buffer; //address for temporary storage and parsing buffer

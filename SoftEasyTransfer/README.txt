@@ -1,3 +1,16 @@
+For use with UWUnderwaterTech's ROV, the library found at the link below
+was modified and used.
+
+https://github.com/madsci1016/Arduino-EasyTransfer
+
+Here are the modifications made to the library:
+
+*	Reduced library to only include the software serial components.
+
+*	Removed checks for specific hardware.
+
+*	Removed sections of code designated for non applicable hardware.
+
 /******************************************************************
 *  EasyTransfer Arduino Library v2.1
 *		details and example sketch: 
@@ -54,22 +67,3 @@ GNU General Public License for more details.
 *To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or
 *send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 ******************************************************************/
-
-
-********************To Install*************************************
-
-To install, unzip and place 'EasyTransfer' folder into your 'C:\Users\{user name}\Documents\Arduino\libraries' folder or '{Arduino IDE path}\hardware\libraries" or {Arduino IDE path}\libraries" directory. 
-
-Restart the Arduino IDE, look for the Library under "Sketch" -> "Import Library". You can also try the examples by finding them
-under "File" -> "Examples" -> "EasyTransfer".
-
-All uses of the library are in the example sketchs. 
-
-
-*******************************************************************
-
-
-Library now has two versions, one for regular hardware Serial, one for use with the NewSoftSerial library
-making any Arduino pin capable of transfering data back and forth easily. 
-
-See the examples to find out how to use the library. 
